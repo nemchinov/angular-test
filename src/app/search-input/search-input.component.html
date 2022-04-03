@@ -1,0 +1,5 @@
+<mat-form-field class="search-input" appearance="outline" focused="true">
+    <mat-label>Query: </mat-label>
+    <input matInput placeholder="Enter query..." (keyup)="onKey($event)" [(ngModel)]="value">
+    <mat-icon matSuffix>search</mat-icon>
+</mat-form-field>

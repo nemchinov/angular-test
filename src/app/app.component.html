@@ -1,0 +1,14 @@
+<div class="content" role="main">
+  <app-search-input (onChangeValue)='onChangeValue($event)' [value]="searchQuery"></app-search-input>
+  <!-- Should be created a component for showing errors, and maybe some shared error store -->
+  <label class="error" *ngIf="error">Something happened during execution: {{error}}.</label>
+  <app-result-list
+      *ngIf="shouldShowResults()"
+      [results]="resultList"
+    ></app-result-list>
+    <p class="empty-result" *ngIf="!shouldShowResults() && !error">{{ emptyResultMessage }}</p>
+    <!-- Should be moved to component -->
+    <div class="spinner" *ngIf="loading" >
+      <img src="assets/spinner.gif" />
+    </div>
+</div>
